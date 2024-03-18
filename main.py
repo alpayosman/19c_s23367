@@ -38,8 +38,29 @@ print(square_roots)
 
 # Task 6
 
-from square_generator import SquareGenerator
+from square_generator.square_generator import SquareGenerator
 
 square_gen = SquareGenerator()
 squares = square_gen.generate_the_squares(1,10)
 print(squares)
+
+
+#Task 8
+class CubicGenerator(SquareGenerator):
+    def generate_cubes(self, start, end):
+
+        if end < start:
+            return []
+        return [x ** 3 for x in range(start, end + 1)]
+
+
+square_gen = SquareGenerator()
+cubic_gen = CubicGenerator()
+
+
+squares = square_gen.generate_the_squares(1, 10)
+
+
+cubes = cubic_gen.generate_cubes(1, 10)
+
+print(squares, cubes)
