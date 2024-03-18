@@ -47,7 +47,7 @@ print(squares)
 
 #Task 8
 class CubicGenerator(SquareGenerator):
-    def generate_cubes(self, start, end):
+    def generate_square(self, start, end):
 
         if end < start:
             return []
@@ -61,6 +61,6 @@ cubic_gen = CubicGenerator()
 squares = square_gen.generate_the_squares(1, 10)
 
 
-cubes = cubic_gen.generate_cubes(1, 10)
+cubes = cubic_gen.generate_square(1, 10)
 
 print(squares, cubes)
