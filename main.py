@@ -28,3 +28,10 @@ square_gen = SquareGenerator()
 
 squares = square_gen.generate_squares(1, 10)
 print(squares)
+
+# Task 4
+
+import math
+
+square_roots = [math.sqrt(square) for square in squares]
+print(square_roots)
