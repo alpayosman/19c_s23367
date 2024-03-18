@@ -35,3 +35,11 @@ import math
 
 square_roots = [math.sqrt(square) for square in squares]
 print(square_roots)
+
+# Task 6
+
+from square_generator import SquareGenerator
+
+square_gen = SquareGenerator()
+squares = square_gen.generate_the_squares(1,10)
+print(squares)
