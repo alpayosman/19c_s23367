@@ -10,9 +10,8 @@ def generate_square(start, end):
     return [x ** 2 for x in range(start, end + 1)]
 
 
-start = int(input("Enter the start of the range: "))
-end = int(input("Enter the end of the range: "))
-print(generate_square(start, end))
+
+print(generate_square(1, 10))
 
 
 # Task 3
@@ -20,14 +19,14 @@ print(generate_square(start, end))
 class SquareGenerator:
     def generate_squares(self, start, end):
         if end < start:
-            return [] # Task 5 handle the smaller end value then range
+            return []  # Task 5 handle the smaller end value then range
         return [x**2 for x in range(start, end + 1)]
 
 
 square_gen = SquareGenerator()
 
 squares = square_gen.generate_squares(1, 10)
-print(squares)
+
 
 # Task 4
 
@@ -38,29 +37,31 @@ print(square_roots)
 
 # Task 6
 
-from square_generator.square_generator import SquareGenerator
+from square_generator.square_generator import SquareGenerator, ConcreteSquareGenerator
 
-square_gen = SquareGenerator()
-squares = square_gen.generate_the_squares(1,10)
+square_gen1 = ConcreteSquareGenerator()
+squares = square_gen1.generate_squares(1,10)
 print(squares)
 
 
-#Task 8
-class CubicGenerator(SquareGenerator):
-    def generate_square(self, start, end):
+from square_generator.square_generator import CubicGenerator
 
-        if end < start:
-            return []
-        return [x ** 3 for x in range(start, end + 1)]
-
-
-square_gen = SquareGenerator()
 cubic_gen = CubicGenerator()
 
+squares = square_gen1.generate_squares(1, 10)
 
-squares = square_gen.generate_the_squares(1, 10)
-
-
-cubes = cubic_gen.generate_square(1, 10)
+cubes = cubic_gen.generate_squares(1,10)
 
 print(squares, cubes)
+
+# Task 9
+from square_generator.square_generator import RaiseError
+try:
+    cubic_gen = CubicGenerator()
+    squares_try = square_gen.generate_squares(10, 1)
+    cubes_try = cubic_gen.generate_squares(10, 1)
+except RaiseError as e:
+    print(e)
+
+
+
